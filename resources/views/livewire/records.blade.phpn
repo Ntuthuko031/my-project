@@ -1,0 +1,26 @@
+<div>
+
+    {{-- The Master doesn't talk, he acts. --}}
+
+	<table class="table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Number</th>
+		</tr>
+	</thead>	
+
+	<tbody>
+		@foreach ($users as $user) 
+			<tr>
+				<td>{{ $user->name }}</td>
+				<td>{{ $user->email }}</td>
+				<td>{{ $user->number }}</td>
+				<td><button wire:click="userEdit({{ $user->id }})" class="btn btn-warning btn-sm"> Edit </button></td>
+				<td><button wire:click="deleteUser({{ $user->id }})" class="btn btn-danger btn-sm"> Delete </button></td>
+			</tr>
+		@endforeach
+	</tbody>
+	</table>
+</div>
